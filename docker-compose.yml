@@ -29,7 +29,6 @@ services:
 
   # DB
   postgres:
-    container_name: postgres
     environment:
       POSTGRES_HOST: postgres
       POSTGRES_USER: sally
