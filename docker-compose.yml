@@ -1,0 +1,17 @@
+# start with current version
+version: '3.6'
+
+# docker-compose build
+# docker-compose run
+# docker-compose up (both in 1 step)
+# docker-compose down (removes older references)
+
+services:
+  smart-brain-api:
+    container_name: backend
+    build: ./
+    command: npm start
+    working_dir: /usr/src/smart-brain-api
+    ports:
+      - "3000:3000"
+      
