@@ -6,6 +6,10 @@ version: '3.6'
 # docker-compose up (both in 1 step)
 # docker-compose down (removes older references)
 
+# forces updating for nodemon and server refersh of container
+# volumes:
+#  - ./:/usr/src/smart-brain-api  
+
 services:
   smart-brain-api:
     container_name: backend
@@ -14,4 +18,5 @@ services:
     working_dir: /usr/src/smart-brain-api
     ports:
       - "3000:3000"
-      
+    volumes:
+      - ./:/usr/src/smart-brain-api  

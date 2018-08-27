@@ -28,6 +28,7 @@ app.use(morgan('combined'))
 app.use(cors())
 app.use(bodyParser.json());
 
+console.log('hmmdsas')
 app.get('/', (req, res)=> { res.send(database.users) })
 app.post('/signin', signin.handleSignin(db, bcrypt))
 app.post('/register', (req, res) => { register.handleRegister(req, res, db, bcrypt) })
