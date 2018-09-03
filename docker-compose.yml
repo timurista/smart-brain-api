@@ -20,8 +20,10 @@ services:
     working_dir: /usr/src/smart-brain-api
     environment:
       POSTGRES_URI: postgres://sally:secret@postgres:5432/smart-brain-docker
+      REDIS_URI: redis://redis:6379
     links:
       - postgres
+      - redis
     ports:
       - "3000:3000"
     volumes:
@@ -37,3 +39,15 @@ services:
     build: ./postgres    
     ports:
       - "5432:5432"
+
+  # REDIS
+  redis:
+    image: redis
+    environment:
+      REDIS_HOST: redis
+      REDIS_USER: sally
+      REDIS_PASSWORD: secret
+      REDIS_DB: smart-brain-redis
+    ports:
+      - "6379:6379"
+
